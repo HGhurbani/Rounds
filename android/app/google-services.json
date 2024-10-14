@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "874637836092",
+    "firebase_url": "https://rounds-26592-default-rtdb.firebaseio.com",
+    "project_id": "rounds-26592",
+    "storage_bucket": "rounds-26592.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874637836092:android:3cce7ae98000b917582839",
+        "android_client_info": {
+          "package_name": "com.rounds.eg.rounds"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTNNXTpdt6H8DDQRAxjG1UEZoMpDR28Jo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
