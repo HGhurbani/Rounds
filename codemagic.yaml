@@ -1,0 +1,82 @@
+workflows:
+  ios-build:
+    name: iOS Build for Testing
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+          cd ios
+          pod install
+          cd ..
+      - name: Build iOS app (Simulator)
+        script: flutter build ios --debug --simulator --no-codesign
+    artifacts:
+      - build/ios/iphonesimulator/*.app
+    publishing:
+      email:
+        recipients:
+          - "hazemhataki@gmail.com"
+  
+  android-build:
+    name: Android Build for Testing
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      android: latest
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Build Android APK
+        script: flutter build apk --debug
+    artifacts:
+      - build/app/outputs/flutter-apk/app-debug.apk
+    publishing:
+      email:
+        recipients:
+          - "hazemhataki@gmail.com"
+
+  ios-release:
+    name: iOS Release Build (requires Apple Developer Account)
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+          cd ios
+          pod install
+          cd ..
+      - name: Build iOS app (Release)
+        script: flutter build ios --release
+    artifacts:
+      - build/ios/iphoneos/*.ipa
+    publishing:
+      email:
+        recipients:
+          - "hazemhataki@gmail.com"
+
+  android-release:
+    name: Android Release Build
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      android: latest
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Build Android APK (Release)
+        script: flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - "hazemhataki@gmail.com"
