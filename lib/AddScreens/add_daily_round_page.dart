@@ -186,15 +186,18 @@ class _AddDailyRoundPageState extends State<AddDailyRoundPage> {
   Widget _buildVoiceInputField(String label, TextEditingController controller) {
     return Container(
       padding: EdgeInsets.all(8),
+      height: 70, // تثبيت ارتفاع الحقل
       decoration: BoxDecoration(
         color: Colors.grey[200],
         borderRadius: BorderRadius.circular(8),
+
       ),
       child: Row(
         children: [
           Expanded(
             child: TextField(
               controller: controller,
+              maxLines: null, // يتيح التمرير العمودي
               decoration: InputDecoration(
                 hintText: label,
                 border: InputBorder.none,

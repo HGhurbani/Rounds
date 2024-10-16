@@ -48,6 +48,7 @@ dependencies:
   mailer: ^3.2.1
   open_file: ^3.0.3
   flutter_easyloading: ^2.2.1
+  firebase_core_web: ^0.2.1+2
   image_picker: ^0.6.7+22
   flutter_form_builder: ^3.14.1
   intent: ^1.4.0

@@ -31,7 +31,7 @@ Widget defaultTextFormField({
         readOnly: read,
         onTap: onTap,
         maxLines: null, // يتيح التمرير العمودي
-        minLines: 1, // بدءًا من سطر واحد
+        // minLines: 1, // بدءًا من سطر واحد
         decoration: InputDecoration(
           prefixIcon: suffix != null ? Icon(suffix, color: teal) : null,
           hintText: hintText,
